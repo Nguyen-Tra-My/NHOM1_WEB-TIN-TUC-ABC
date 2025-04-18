@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ddd;    
+}
+header a{
+    text-decoration: none;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo .vn {
+    color: blue;
+}
+
+.logo .express {
+    color: #b22222;
+    border-left: 2px solid #b22222;
+    padding-left: 5px;
+}
+
+.menu-right a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #666;
+}
+
+.menu-right a:hover {
+    color: #b22222;
+}
+
+.menu {
+    background-color: white;
+    border-bottom: 2px solid #0073e6;
+    padding: 10px;
+}
+
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu-list li {
+    position: relative;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 12px;
+    display: block;
+}
+
+.menu-list a:hover {
+    color: #0073e6;
+}
+
+.home-icon {
+    font-size: 20px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+}
+
+.dropdown-content a {
+    padding: 8px 12px;
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+main a{
+    text-decoration: none;
+    color: black;
+}

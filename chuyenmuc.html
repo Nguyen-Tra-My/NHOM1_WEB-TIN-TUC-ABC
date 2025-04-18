@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <style>
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.red-text{ color: rgb(24, 161, 230)  ;}
+
+
+.top-bar {
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+.left-icons {
+    display: flex;
+    align-items: center;
+}
+.left-icons .logo img {
+    height: 40px;
+    margin-right: 20px;
+}
+.left-icons .icon-group a {
+    margin-right: 15px;
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+}
+.left-icons .icon-group a:hover {
+    color: #1a3dcb68;
+}
+.right-section {
+    display: flex;
+    align-items: center;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 50px;
+    padding: 10px 10px;
+    margin-right: 100px;
+}
+.search-bar input {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 50 px;
+}
+.search-bar button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #555;
+}
+.login {
+    color: #555;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+main {
+  padding: 2rem;
+}
+
+.news-category {
+  max-width: 800px;
+  margin: auto;
+}
+
+details {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f9f9f9;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+summary:hover {
+  color: #007BFF;
+}
+
+p {
+  margin: 0.5rem 0 0;
+  color: #555;
+}
+.container {
+    display: flex;
+    margin: 20px;
+}
+.main-content {
+    flex: 3;
+    margin-right: 20px;
+}
+.main-content section {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.main-content article {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+}
+.main-content img {
+    width: 150px;
+    height: 150px;
+}
+
+aside {
+    flex: 1;
+}
+aside .popular-news, aside .advertisement {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.ad-box {
+    background-color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+}
+.dropdown-menu {
+  display: none; /* Ẩn menu con ban đầu */
+  position: absolute; /* Hiển thị bên dưới menu chính */
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-menu li {
+  float: none; /* Không hiển thị ngang */
+  border-bottom: 1px solid #ddd;
+}
+
+ .dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+ .dropdown-menu a {
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+ .dropdown-menu a:hover {
+  background-color: #ddd;
+ }
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+footer {
+    background-color: #2586af;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.menu {
+  background-color: #4a9de1;
+  padding: 10px 0;
+}
+
+.menu-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-list li {
+  position: relative;
+}
+
+.menu-list a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+}
+
+.menu-list a:hover {
+  background-color: #575757;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu li {
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a {
+  color: #333;
+  padding: 10px 15px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+  </style>
+</head>
+<header>
+
+<div> <h2 class=" red-text"> TIN TỨC ABC </h2></div>
+
+<div class="right-section">
+    <div class="search-bar">
+        <input type="text" placeholder="Nhập thông tin cần tìm...">
+        <button><i class="fas fa-search"></i></button> </div>
+</div>
+</header>
+<body>
+  <nav class="menu">
+    <ul class="menu-list">
+      <li><a href="#">Trang chủ</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-btn"> Chính trị</a>
+        <ul class="dropdown-menu">
+          <li><a href="#"> Sự kiện  </a></li>
+          <li><a href="#"> Thời luận </a></li>
+          <li><a href="#"> Kỷ nguyên mới </a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-btn"> Thời sự </a>
+        <ul class="dropdown-menu">
+          <li><a href="#"> Pháp luật </a></li>
+          <li><a href="#"> Dân sinh </a></li>
+          <li><a href="#"> Lao động </a></li>
+          <li><a href="#"> Phóng sự </a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-btn"> Thế giới  </a>
+        <ul class="dropdown-menu">
+          <li><a href="#"> Quân sự </a></li>
+          <li><a href="#"> Kinh tế thế giới </a></li>
+          <li><a href="#"> TIền tệ </a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-btn"> Kinh tế </a>
+        <ul class="dropdown-menu">
+          <li><a href="#"> Kinh tế xanh </a></li>
+          <li><a href="#"> Ngân hàng </a></li>
+          <li><a href="#"> Chứng khoáng </a></li>
+          <li><a href="#">Doanh nghệp  </a></li>
+        </ul>
+      </li>
+    
+    <li class="dropdown">
+      <a href="#" class="dropdown-btn"> Đời sống  </a>
+      <ul class="dropdown-menu">
+        <li><a href="#"> Gia đình </a></li>
+        <li><a href="#"> Ẩm thực </a></li>
+        <li><a href="#"> Cộng đồng </a></li>
+        <li><a href="#">   </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-btn"> Đời sống  </a>
+      <ul class="dropdown-menu">
+        <li><a href="#"> Gia đình </a></li>
+        <li><a href="#"> Ẩm thực </a></li>
+        <li><a href="#"> Cộng đồng </a></li>
+        <li><a href="#">   </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-btn"> Sức khỏe  </a>
+        <ul class="dropdown-menu">
+          <li><a href="#"> Làm đẹp  </a></li>
+          <li><a href="#"> Khỏe mỗi ngày </a></li>
+          <li><a href="#"> Thẩm mỹ </a></li>
+          <li><a href="#"> Thành tựu y khoa </a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-btn"> Giáo dục </a>
+        <ul class="dropdown-menu">
+          <li><a href="#"> Tuyển sinh </a></li>
+          <li><a href="#"> Tra cứu điểm thi </a></li>
+          <li><a href="#"> Nhà trường </a></li>
+          <li><a href="#"> Du học </a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-btn"> Thể thao </a>
+        <ul class="dropdown-menu">
+          <li><a href="#"> Bóng đá Việt Nam </a></li>
+          <li><a href="#"> Bóng đá Quốc tế </a></li>
+          <li><a href="#"> Các môn khác </a></li>
+
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-btn"> Công nghệ  </a>
+        <ul class="dropdown-menu">
+          <li><a href="#"> AI </a></li>
+          <li><a href="#"> Thành tựu </a></li>
+          <li><a href="#"> Công nghệ số </a></li>
+          <li><a href="#"> Game </a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-btn"> Thời trang </a>
+        <ul class="dropdown-menu">
+          <li><a href="#"> Xu hướng mới </a></li>
+          <li><a href="#"> Tuần lễ thời trang </a></li>
+          <li><a href="#"> Thiết kế </a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-btn"> Du lịch  </a>
+        <ul class="dropdown-menu">
+          <li><a href="#"> Chơi gì, ăn đâu, đi thế nào?  </a></li>
+          <li><a href="#"> Bất động sản du lịch </a></li>
+          <li><a href="#"> Sự kiện </a></li>
+          <li><a href="#"> Khám phá </a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <section class="news-category">
+      <h2>Chính trị </h2>
+      
+      <details>
+        <summary> Sự kiện </summary>
+        <p>Chi tiết nội dung của bài viết về sự kiện chính trị gần đây nhất.</p>
+      </details>
+      
+      <details>
+        <summary>Vươn mình trong kỷ nguyên mới </summary>
+        <p>Chi tiết bài viết vươn mình trong ky nguyên mớimới.</p>
+      </details>
+      
+      <details>
+        <summary> Thời luận </summary>
+        <p>Chi tiết bài viết thời luận</p>
+      </details>
+    </section>
+  </main>
+<div class="container">
+    <div class="main-content">
+      
+        <section class="featured-news">
+            <h2>Tin Nổi Bật</h2>
+            <article>
+                <img src="https://via.placeholder.com/600x300" alt="Hình ảnh tin tức">
+                <h3>Tiêu đề bài viết nổi bật</h3>
+                <p>Mô tả nội dung bài viết nổi bật này...</p>
+            </article>
+        </section>
+
+        <section class="news-list">
+            <h2>Các Bài Viết Khác</h2>
+            <article>
+                <img src="https://via.placeholder.com/150" alt="Hình ảnh tin tức">
+                <div>
+                    <h3>Tiêu đề bài viết 1</h3>
+                    <p>Mô tả ngắn gọn của bài viết...</p>
+                </div>
+            </article>
+            <article>
+                <img src="https://via.placeholder.com/150" alt="Hình ảnh tin tức">
+                <div>
+                    <h3>Tiêu đề bài viết 2</h3>
+                    <p>Mô tả ngắn gọn của bài viết...</p>
+                </div>
+            </article>
+        </section>
+    </div>
+
+    <aside>
+        <div class="popular-news">
+            <h2>Tin Nóng</h2>
+            <ul>
+                <li><a href="#">Tin nóng 1</a></li>
+                <li><a href="#">Tin nóng 2</a></li>
+                <li><a href="#">Tin nóng 3</a></li>
+            </ul>
+        </div>
+        <div class="advertisement">
+            <h2>Quảng Cáo</h2>
+            <div class="ad-box">Quảng cáo tại đây</div>
+        </div>
+    </aside>
+</div>
+
+</body>
+</html>

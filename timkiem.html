@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Tìm Kiếm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background: #002D62;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .menu {
+            background: #ffffff;
+            padding: 10px;
+            display: flex;
+            gap: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+        .menu a:hover {
+            color: #ff6600;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .search-box input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-box button {
+            background: #ff6600;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .filters {
+            margin-bottom: 20px;
+        }
+        .filters select {
+            padding: 5px;
+            margin-right: 10px;
+        }
+        .result {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .result img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .result-content {
+            flex: 1;
+        }
+        .result h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #002D62;
+        }
+        .result p {
+            margin: 5px 0 0;
+            color: #555;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="header">Kết quả tìm kiếm</div>
+    <div class="menu">
+        <a href="#">Thời sự</a>
+        <a href="#">Thế giới</a>
+        <a href="#">Kinh doanh</a>
+        <a href="#">Công nghệ</a>
+        <a href="#">Khoa học</a>
+        <a href="#">Video</a>
+        <a href="#">Podcasts</a>
+        <a href="#">Góc nhìn</a>
+        <a href="#">Bất động sản</a>
+        <a href="#">Sức khỏe</a>
+    </div>
+	 <div class="filters">
+            <label>Thời gian:
+                <select>
+                    <option>Tất cả</option>
+                    <option>1 ngày qua</option>
+                    <option>1 tuần qua</option>
+                    <option>1 tháng qua</option>
+                    <option>1 năm qua</option>
+                </select>
+            </label>
+            <label>Chuyên mục:
+                <select>
+                    <option>Tất cả</option>
+                    <option>Thế giới</option>
+                    <option>Kinh doanh</option>
+                    <option>Giải trí</option>
+                    <option>Thể thao</option>
+                    <option>Giáo dục</option>
+                    <option>Khoa học</option>
+                    <option>Sức khỏe</option>
+                    <option>Xe</option>
+                    <option>Đời sống</option>
+                    <option>Pháp luật</option>
+                </select>
+            </label>
+            <label>Dạng bài:
+                <select>
+                    <option>Tất cả</option>
+                    <option>Bài viết</option>
+                    <option>Ảnh</option>
+                    <option>Video</option>
+                    <option>Chủ đề</option>
+                    <option>Infographic</option>
+                </select>
+            </label>
+        </div>
+        <div id="results"></div>
+    </div>
+
+	 <div class="container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Nhập từ khóa tìm kiếm...">
+            <button onclick="searchContent()">Tìm kiếm</button>
+        </div>
+    <div class="container">
+        <div class="result">
+            <div class="result-content">
+                <h3><a href="https://thanhnien.vn/" target="_blank">Bài viết 1</a></h3>
+                <p>Báo thanh niên.</p>
+            </div>
+        </div>
+        <div class="result">
+            
+            <div class="result-content">
+                <h3><a href="https://thanhnien.vn/kinh-te/chinh-sach-phat-trien.htm" target="_blank">Bài viết 2</a></h3>
+                <p>Chính trị.</p>
+            </div>
+        </div>
+        <div class="result">
+          
+            <div class="result-content">
+                <h3><a href="https://example.com/bai-viet-3" target="_blank">Bài viết 3</a></h3>
+                <p>Hướng dẫn HTML và CSS cơ bản dành cho người mới.</p>
+            </div>
+        </div>
+        <div class="result">
+         
+            <div class="result-content">
+                <h3><a href="https://example.com/bai-viet-4" target="_blank">Bài viết 4</a></h3>
+                <p>Giới thiệu về ReactJS và cách xây dựng ứng dụng web hiện đại.</p>
+            </div>
+        </div>
+        <div class="result">
+         
+            <div class="result-content">
+                <h3><a href="https://example.com/bai-viet-5" target="_blank">Bài viết 5</a></h3>
+                <p>Cách sử dụng API để lấy dữ liệu động trong trang web.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
